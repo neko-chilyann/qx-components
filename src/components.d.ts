@@ -6,32 +6,80 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface ScrollShadowBar {
+    interface ScrollDecorationBar {
+        /**
+          * 所在位置
+          * @type {('top' | 'right')}
+          * @memberof ScrollDecorationBar
+         */
+        "position": 'top' | 'right';
+        /**
+          * 监控滚动条的element节点
+          * @type {HTMLDivElement}
+          * @memberof ScrollDecorationBar
+         */
+        "scrollDom": HTMLDivElement;
+        /**
+          * 滚动条距离开始距离，当为0时隐藏滚动阴影
+          * @type {number}
+          * @memberof ScrollDecorationBar
+         */
+        "scrollNum": number;
+        /**
+          * 显示的z-index层级
+          * @type {number}
+          * @memberof ScrollDecorationBar
+         */
+        "zIndex": number;
     }
 }
 declare global {
-    interface HTMLScrollShadowBarElement extends Components.ScrollShadowBar, HTMLStencilElement {
+    interface HTMLScrollDecorationBarElement extends Components.ScrollDecorationBar, HTMLStencilElement {
     }
-    var HTMLScrollShadowBarElement: {
-        prototype: HTMLScrollShadowBarElement;
-        new (): HTMLScrollShadowBarElement;
+    var HTMLScrollDecorationBarElement: {
+        prototype: HTMLScrollDecorationBarElement;
+        new (): HTMLScrollDecorationBarElement;
     };
     interface HTMLElementTagNameMap {
-        "scroll-shadow-bar": HTMLScrollShadowBarElement;
+        "scroll-decoration-bar": HTMLScrollDecorationBarElement;
     }
 }
 declare namespace LocalJSX {
-    interface ScrollShadowBar {
+    interface ScrollDecorationBar {
+        /**
+          * 所在位置
+          * @type {('top' | 'right')}
+          * @memberof ScrollDecorationBar
+         */
+        "position"?: 'top' | 'right';
+        /**
+          * 监控滚动条的element节点
+          * @type {HTMLDivElement}
+          * @memberof ScrollDecorationBar
+         */
+        "scrollDom"?: HTMLDivElement;
+        /**
+          * 滚动条距离开始距离，当为0时隐藏滚动阴影
+          * @type {number}
+          * @memberof ScrollDecorationBar
+         */
+        "scrollNum"?: number;
+        /**
+          * 显示的z-index层级
+          * @type {number}
+          * @memberof ScrollDecorationBar
+         */
+        "zIndex"?: number;
     }
     interface IntrinsicElements {
-        "scroll-shadow-bar": ScrollShadowBar;
+        "scroll-decoration-bar": ScrollDecorationBar;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "scroll-shadow-bar": LocalJSX.ScrollShadowBar & JSXBase.HTMLAttributes<HTMLScrollShadowBarElement>;
+            "scroll-decoration-bar": LocalJSX.ScrollDecorationBar & JSXBase.HTMLAttributes<HTMLScrollDecorationBarElement>;
         }
     }
 }

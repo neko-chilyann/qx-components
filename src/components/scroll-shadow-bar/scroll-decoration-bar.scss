@@ -1,0 +1,26 @@
+:host {
+  display: block;
+  position: absolute;
+  z-index: 100;
+  --box-shadow-color: #000000;
+}
+
+:host(.top) {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  box-shadow: var(--box-shadow-color) 0 6px 6px -6px inset;
+}
+
+:host(.right) {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 6px;
+  box-shadow: var(--box-shadow-color) -6px 0 6px -6px inset;
+}
+
+:host(.hidden) {
+  display: none;
+}

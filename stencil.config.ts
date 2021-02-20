@@ -11,7 +11,7 @@ export const config: Config = {
   },
   bundles: [
     {
-      components: ['scroll-shadow-bar'],
+      components: ['scroll-decoration-bar'],
     },
   ],
   outputTargets: [
