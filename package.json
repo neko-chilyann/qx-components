@@ -23,11 +23,9 @@
     "generate": "stencil generate"
   },
   "dependencies": {
-    "@popperjs/core": "^2.7.2",
     "@stencil/core": "^2.4.0",
     "interactjs": "^1.10.3",
-    "ionicons": "^5.5.0",
-    "qx-util": "^0.0.3",
+    "qx-util": "^0.0.4",
     "ramda": "^0.27.1"
   },
   "devDependencies": {

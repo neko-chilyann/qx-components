@@ -507,11 +507,6 @@
     "@nodelib/fs.scandir" "2.1.4"
     fastq "^1.6.0"
 
-"@popperjs/core@^2.7.2":
-  version "2.7.2"
-  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.7.2.tgz#00644825ce478065101954bdb2f7f2d062365b7f"
-  integrity sha512-3LC1/M2ZFcmDrSkD1byT/hZzoPehZkDucbDShLnZ+/Gwkr6CAxiQ2kWy1UtJeLGADe58hTWkx22YEHqjPGUKzw==
-
 "@rollup/plugin-eslint@^8.0.1":
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-eslint/-/plugin-eslint-8.0.1.tgz#bf7462f96027613729b8a805caaa951dc23c333e"
@@ -2102,13 +2097,6 @@ interactjs@^1.10.3:
   dependencies:
     "@interactjs/types" "1.10.3"
 
-ionicons@^5.5.0:
-  version "5.5.0"
-  resolved "https://registry.yarnpkg.com/ionicons/-/ionicons-5.5.0.tgz#74ab783be11bee60e4351153c80b6d0682e5125a"
-  integrity sha512-0DUHTeoIrGSY+KNyNDaQW7v5+mDstjSkjx8dzT925kXKYBDrN3sGs8kUcSSQbTK132U4CbgDEZkn7FDUa9x8Qw==
-  dependencies:
-    "@stencil/core" "^2.4.0"
-
 ip-regex@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/ip-regex/-/ip-regex-2.1.0.tgz#fa78bf5d2e6913c911ce9f819ee5146bb6d844e9"
@@ -3347,12 +3335,11 @@ qs@~6.5.2:
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
   integrity sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==
 
-qx-util@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/qx-util/-/qx-util-0.0.3.tgz#c786b96916b36f23e5f1f0779c911a8e6aa7126c"
-  integrity sha512-ypNunEWAt+JZDPMkeqlUpUeY7sNivmrnchV+8nuYEfMfTkO/XmYPxikD9tsQk+rDrrtD/gfPQYdScIDuKGYXWw==
+qx-util@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/qx-util/-/qx-util-0.0.4.tgz#30f738081e27956bda6188e91f12c4e34cb53b81"
+  integrity sha512-Wuq39EteinnKH84rCs+MusqLB9qDVLtnZfpuCvImaSofEQ2KpKEiUinAJp5ZaiYWnW4OSKwKaBmiFN9ANzNaqg==
   dependencies:
-    "@stencil/core" "^2.4.0"
     ramda "^0.27.1"
 
 ramda@^0.27.1:
