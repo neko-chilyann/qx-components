@@ -6,6 +6,29 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface QxContextMenu {
+        /**
+          * 是否悬浮
+          * @return {Promise<boolean>}
+          * @memberof QxContextMenu
+         */
+        "isHover": () => Promise<boolean>;
+        /**
+          * 菜单数据
+          * @type {any[]}
+          * @memberof QxContextMenu
+         */
+        "menus": any[];
+        /**
+          * 显示菜单
+          * @param e
+          * @return {Promise<void>}
+          * @memberof QxContextMenu
+         */
+        "show": (e: MouseEvent) => Promise<void>;
+    }
+    interface QxMain {
+    }
     interface ScrollDecorationBar {
         /**
           * 所在位置
@@ -34,6 +57,18 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLQxContextMenuElement extends Components.QxContextMenu, HTMLStencilElement {
+    }
+    var HTMLQxContextMenuElement: {
+        prototype: HTMLQxContextMenuElement;
+        new (): HTMLQxContextMenuElement;
+    };
+    interface HTMLQxMainElement extends Components.QxMain, HTMLStencilElement {
+    }
+    var HTMLQxMainElement: {
+        prototype: HTMLQxMainElement;
+        new (): HTMLQxMainElement;
+    };
     interface HTMLScrollDecorationBarElement extends Components.ScrollDecorationBar, HTMLStencilElement {
     }
     var HTMLScrollDecorationBarElement: {
@@ -41,10 +76,22 @@ declare global {
         new (): HTMLScrollDecorationBarElement;
     };
     interface HTMLElementTagNameMap {
+        "qx-context-menu": HTMLQxContextMenuElement;
+        "qx-main": HTMLQxMainElement;
         "scroll-decoration-bar": HTMLScrollDecorationBarElement;
     }
 }
 declare namespace LocalJSX {
+    interface QxContextMenu {
+        /**
+          * 菜单数据
+          * @type {any[]}
+          * @memberof QxContextMenu
+         */
+        "menus"?: any[];
+    }
+    interface QxMain {
+    }
     interface ScrollDecorationBar {
         /**
           * 所在位置
@@ -72,6 +119,8 @@ declare namespace LocalJSX {
         "zIndex"?: number;
     }
     interface IntrinsicElements {
+        "qx-context-menu": QxContextMenu;
+        "qx-main": QxMain;
         "scroll-decoration-bar": ScrollDecorationBar;
     }
 }
@@ -79,6 +128,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "qx-context-menu": LocalJSX.QxContextMenu & JSXBase.HTMLAttributes<HTMLQxContextMenuElement>;
+            "qx-main": LocalJSX.QxMain & JSXBase.HTMLAttributes<HTMLQxMainElement>;
             "scroll-decoration-bar": LocalJSX.ScrollDecorationBar & JSXBase.HTMLAttributes<HTMLScrollDecorationBarElement>;
         }
     }
