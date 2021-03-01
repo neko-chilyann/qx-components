@@ -4,7 +4,7 @@ import eslint from '@rollup/plugin-eslint';
 
 export const config: Config = {
   autoprefixCss: true,
-  namespace: 'qx-components',
+  namespace: 'qx-context-menu',
   plugins: [sass()],
   rollupPlugins: {
     before: [eslint()],
@@ -12,6 +12,9 @@ export const config: Config = {
   bundles: [
     {
       components: ['scroll-decoration-bar'],
+    },
+    {
+      components: ['zoom-container'],
     },
   ],
   outputTargets: [

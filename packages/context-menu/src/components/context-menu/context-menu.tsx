@@ -4,27 +4,27 @@ import { Component, Host, h, Prop, Method, Element, Listen, ComponentInterface }
  * 系统上下文菜单
  *
  * @export
- * @class QxContextMenu
+ * @class ContextMenu
  */
 @Component({
-  tag: 'qx-context-menu',
-  styleUrl: 'qx-context-menu.scss',
+  tag: 'context-menu',
+  styleUrl: 'context-menu.scss',
 })
-export class QxContextMenu implements ComponentInterface {
+export class ContextMenu implements ComponentInterface {
   @Element()
   el: HTMLElement;
   /**
    * 菜单数据
    *
    * @type {any[]}
-   * @memberof QxContextMenu
+   * @memberof ContextMenu
    */
   @Prop()
   menus: any[] = [];
   /**
    * 是否悬浮在菜单中
    *
-   * @memberof QxContextMenu
+   * @memberof ContextMenu
    */
   hover = false;
 
@@ -52,7 +52,7 @@ export class QxContextMenu implements ComponentInterface {
    * 是否悬浮
    *
    * @return {*}  {Promise<boolean>}
-   * @memberof QxContextMenu
+   * @memberof ContextMenu
    */
   @Method()
   async isHover(): Promise<boolean> {
@@ -64,7 +64,7 @@ export class QxContextMenu implements ComponentInterface {
    *
    * @param {MouseEvent} e
    * @return {*}  {Promise<void>}
-   * @memberof QxContextMenu
+   * @memberof ContextMenu
    */
   @Method()
   async show(e: MouseEvent): Promise<void> {

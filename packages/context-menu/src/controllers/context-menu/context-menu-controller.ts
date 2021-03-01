@@ -1,4 +1,4 @@
-import { QxContextMenu } from '../../components/qx-context-menu/qx-context-menu';
+import { ContextMenu } from '../../components/context-menu/context-menu';
 
 /**
  * 上下文菜单控制器
@@ -14,7 +14,7 @@ export class ContextMenuController {
    * @type {HTMLQxContextMenuElement}
    * @memberof ContextMenuController
    */
-  protected container: QxContextMenu;
+  protected container: ContextMenu;
 
   protected addEvents(): void {
     window.addEventListener('mousedown', this.mouseDown);

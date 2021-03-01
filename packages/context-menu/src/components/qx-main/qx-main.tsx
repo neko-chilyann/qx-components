@@ -20,6 +20,6 @@ export class QxMain {
   }
 
   render() {
-    return <Host class='qx-main'>右键菜单测试</Host>;
+    return <Host class='qx-main'><zoom-container width={1440} height={1024}/></Host>;
   }
 }

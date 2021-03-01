@@ -6,24 +6,24 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface QxContextMenu {
+    interface ContextMenu {
         /**
           * 是否悬浮
           * @return {Promise<boolean>}
-          * @memberof QxContextMenu
+          * @memberof ContextMenu
          */
         "isHover": () => Promise<boolean>;
         /**
           * 菜单数据
           * @type {any[]}
-          * @memberof QxContextMenu
+          * @memberof ContextMenu
          */
         "menus": any[];
         /**
           * 显示菜单
           * @param e
           * @return {Promise<void>}
-          * @memberof QxContextMenu
+          * @memberof ContextMenu
          */
         "show": (e: MouseEvent) => Promise<void>;
     }
@@ -55,13 +55,41 @@ export namespace Components {
          */
         "zIndex": number;
     }
+    interface ZoomContainer {
+        /**
+          * 指定内容高度
+          * @memberof ZoomContainer
+         */
+        "height": number;
+        /**
+          * 是否只允许鼠标在容器内空白处才可拖滚动画布
+          * @type {boolean}
+          * @memberof ZoomContainer
+         */
+        "isContainerDragScroll": boolean;
+        /**
+          * 最大缩放
+          * @memberof ZoomContainer
+         */
+        "maxZoom": number;
+        /**
+          * 最小缩放
+          * @memberof ZoomContainer
+         */
+        "minZoom": number;
+        /**
+          * 指定内容宽度
+          * @memberof ZoomContainer
+         */
+        "width": number;
+    }
 }
 declare global {
-    interface HTMLQxContextMenuElement extends Components.QxContextMenu, HTMLStencilElement {
+    interface HTMLContextMenuElement extends Components.ContextMenu, HTMLStencilElement {
     }
-    var HTMLQxContextMenuElement: {
-        prototype: HTMLQxContextMenuElement;
-        new (): HTMLQxContextMenuElement;
+    var HTMLContextMenuElement: {
+        prototype: HTMLContextMenuElement;
+        new (): HTMLContextMenuElement;
     };
     interface HTMLQxMainElement extends Components.QxMain, HTMLStencilElement {
     }
@@ -75,18 +103,25 @@ declare global {
         prototype: HTMLScrollDecorationBarElement;
         new (): HTMLScrollDecorationBarElement;
     };
+    interface HTMLZoomContainerElement extends Components.ZoomContainer, HTMLStencilElement {
+    }
+    var HTMLZoomContainerElement: {
+        prototype: HTMLZoomContainerElement;
+        new (): HTMLZoomContainerElement;
+    };
     interface HTMLElementTagNameMap {
-        "qx-context-menu": HTMLQxContextMenuElement;
+        "context-menu": HTMLContextMenuElement;
         "qx-main": HTMLQxMainElement;
         "scroll-decoration-bar": HTMLScrollDecorationBarElement;
+        "zoom-container": HTMLZoomContainerElement;
     }
 }
 declare namespace LocalJSX {
-    interface QxContextMenu {
+    interface ContextMenu {
         /**
           * 菜单数据
           * @type {any[]}
-          * @memberof QxContextMenu
+          * @memberof ContextMenu
          */
         "menus"?: any[];
     }
@@ -118,19 +153,49 @@ declare namespace LocalJSX {
          */
         "zIndex"?: number;
     }
+    interface ZoomContainer {
+        /**
+          * 指定内容高度
+          * @memberof ZoomContainer
+         */
+        "height"?: number;
+        /**
+          * 是否只允许鼠标在容器内空白处才可拖滚动画布
+          * @type {boolean}
+          * @memberof ZoomContainer
+         */
+        "isContainerDragScroll"?: boolean;
+        /**
+          * 最大缩放
+          * @memberof ZoomContainer
+         */
+        "maxZoom"?: number;
+        /**
+          * 最小缩放
+          * @memberof ZoomContainer
+         */
+        "minZoom"?: number;
+        /**
+          * 指定内容宽度
+          * @memberof ZoomContainer
+         */
+        "width"?: number;
+    }
     interface IntrinsicElements {
-        "qx-context-menu": QxContextMenu;
+        "context-menu": ContextMenu;
         "qx-main": QxMain;
         "scroll-decoration-bar": ScrollDecorationBar;
+        "zoom-container": ZoomContainer;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "qx-context-menu": LocalJSX.QxContextMenu & JSXBase.HTMLAttributes<HTMLQxContextMenuElement>;
+            "context-menu": LocalJSX.ContextMenu & JSXBase.HTMLAttributes<HTMLContextMenuElement>;
             "qx-main": LocalJSX.QxMain & JSXBase.HTMLAttributes<HTMLQxMainElement>;
             "scroll-decoration-bar": LocalJSX.ScrollDecorationBar & JSXBase.HTMLAttributes<HTMLScrollDecorationBarElement>;
+            "zoom-container": LocalJSX.ZoomContainer & JSXBase.HTMLAttributes<HTMLZoomContainerElement>;
         }
     }
 }

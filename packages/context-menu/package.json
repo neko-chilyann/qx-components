@@ -24,9 +24,12 @@
   },
   "dependencies": {
     "@stencil/core": "^2.4.0",
+    "add": "^2.0.6",
+    "html2canvas": "^1.0.0-rc.7",
     "interactjs": "^1.10.3",
     "qx-util": "^0.0.4",
-    "ramda": "^0.27.1"
+    "ramda": "^0.27.1",
+    "yarn": "^1.22.10"
   },
   "devDependencies": {
     "@rollup/plugin-eslint": "^8.0.1",
