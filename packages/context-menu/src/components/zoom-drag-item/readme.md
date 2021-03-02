@@ -1,4 +1,4 @@
-# qx-main
+# zoom-drag-item
 
 
 
@@ -7,16 +7,15 @@
 
 ## Dependencies
 
-### Depends on
+### Used by
 
-- [zoom-container](../zoom-container)
+ - [zoom-container](../zoom-container)
 
 ### Graph
 ```mermaid
 graph TD;
-  qx-main --> zoom-container
   zoom-container --> zoom-drag-item
-  style qx-main fill:#f9f,stroke:#333,stroke-width:4px
+  style zoom-drag-item fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

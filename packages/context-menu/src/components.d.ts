@@ -83,6 +83,8 @@ export namespace Components {
          */
         "width": number;
     }
+    interface ZoomDragItem {
+    }
 }
 declare global {
     interface HTMLContextMenuElement extends Components.ContextMenu, HTMLStencilElement {
@@ -109,11 +111,18 @@ declare global {
         prototype: HTMLZoomContainerElement;
         new (): HTMLZoomContainerElement;
     };
+    interface HTMLZoomDragItemElement extends Components.ZoomDragItem, HTMLStencilElement {
+    }
+    var HTMLZoomDragItemElement: {
+        prototype: HTMLZoomDragItemElement;
+        new (): HTMLZoomDragItemElement;
+    };
     interface HTMLElementTagNameMap {
         "context-menu": HTMLContextMenuElement;
         "qx-main": HTMLQxMainElement;
         "scroll-decoration-bar": HTMLScrollDecorationBarElement;
         "zoom-container": HTMLZoomContainerElement;
+        "zoom-drag-item": HTMLZoomDragItemElement;
     }
 }
 declare namespace LocalJSX {
@@ -181,11 +190,14 @@ declare namespace LocalJSX {
          */
         "width"?: number;
     }
+    interface ZoomDragItem {
+    }
     interface IntrinsicElements {
         "context-menu": ContextMenu;
         "qx-main": QxMain;
         "scroll-decoration-bar": ScrollDecorationBar;
         "zoom-container": ZoomContainer;
+        "zoom-drag-item": ZoomDragItem;
     }
 }
 export { LocalJSX as JSX };
@@ -196,6 +208,7 @@ declare module "@stencil/core" {
             "qx-main": LocalJSX.QxMain & JSXBase.HTMLAttributes<HTMLQxMainElement>;
             "scroll-decoration-bar": LocalJSX.ScrollDecorationBar & JSXBase.HTMLAttributes<HTMLScrollDecorationBarElement>;
             "zoom-container": LocalJSX.ZoomContainer & JSXBase.HTMLAttributes<HTMLZoomContainerElement>;
+            "zoom-drag-item": LocalJSX.ZoomDragItem & JSXBase.HTMLAttributes<HTMLZoomDragItemElement>;
         }
     }
 }

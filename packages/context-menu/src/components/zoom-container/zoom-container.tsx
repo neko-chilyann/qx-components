@@ -171,8 +171,8 @@ export class ZoomContainer implements ComponentInterface {
       <Host class='zoom-container'>
         <div class='zoom-wrapper' ref={ref => (this.wrapper = ref)}>
           <div class='zoom-content' ref={ref => (this.contentRef = ref)}>
-            <div style={{ width: '200px', height: '200px', background: '#666' }}>内容</div>
-            <div style={{ width: '200px', height: '200px', background: '#666' }}>测试</div>
+            <zoom-drag-item style={{ width: '200px', height: '200px', background: '#666' }}>内容</zoom-drag-item>
+            <zoom-drag-item style={{ width: '200px', height: '200px', background: '#666' }}>测试</zoom-drag-item>
           </div>
         </div>
         <div class='zoom-map' ref={ref => (this.mapRef = ref)}>{this.renderSvgContent()}</div>
